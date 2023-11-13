@@ -13,18 +13,19 @@ To run this API, you will need to install the following packages:
 
 **IMPORTANT!**
 
-You need to fill in the file called connection in database folder:
+You need to create and fill the file .env in root like the example in .env.example with the database config and the token password:
 
 ```
-const host = 'localhost';
-const user = 'postgres';
-const database = 'bank';
-const password = 'YOUR_PASSWORD';
-const port = 5432;
+HOST=
+PORT=
+USER=
+PASSWORD=
+DATABASE=
 
+TOKEN_PASSWORD=
 ```
 
-After installing packages, run the command in src folder:
+After installing packages, run the command in root:
 
     npm run dev
 

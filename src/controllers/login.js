@@ -1,3 +1,4 @@
+require('dotenv').config()
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const { query } = require('../database/connection')
@@ -19,7 +20,7 @@ const login = async (req, res) => {
         if (!correctPassword) {
             return res.status(400).json({ message: 'Email ou senha incorretos' })
         }
-        const token = jwt.sign({ id: usuario.id }, 'securePass', { expiresIn: '30d' })
+        const token = jwt.sign({ id: usuario.id }, process.env.TOKEN_PASSWORD, { expiresIn: '30d' })
         const { senha: _, ...userData } = usuario
 
         return res.status(200).json({
