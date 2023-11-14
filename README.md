@@ -109,7 +109,7 @@ INSERT INTO categorias (descricao) VALUES
     * "**/login**" - Registered users can use this endpoint to authenticate themselves to the system. They provide their credentials (for example, email and password) to obtain an authentication token, which will be used to access protected resources of the API.
 
 * **Authentication:**
-    * The "validarLogin.js" file is a middleware responsible for creating the "token" at the time of **Login**. This token is used to authenticate the user so they can access **all** routes except: "/user" and "/login".
+    * The "authentication.js" file is a middleware responsible for creating the "token" at the time of **Login**. This token is used to authenticate the user so they can access **all** routes except: "/user" and "/login".
 
 * **Detail Logged User:**
     * Method **GET**
