@@ -46,7 +46,7 @@ const updateUserProfile = async (req, res) => {
     try {
         const user = await query('select * from usuarios where email = $1', [email])
         if (user.rowCount > 0 && user.rows[0].id !== usuario.id) {
-            return res.status(400).json({ message: 'Email ja existe cadastrado' })
+            return res.status(400).json({ message: 'Emails already exists' })
         }
 
         const cryptPassword = await bcrypt.hash(senha, 10)
