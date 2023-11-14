@@ -11,7 +11,7 @@ const postUser = async (req, res) => {
     try {
         const user = await query('select * from usuarios where email = $1', [email])
         if (user.rowCount > 0) {
-            return res.status(400).json({ message: 'Email ja existe' })
+            return res.status(400).json({ message: 'Emails already exists' })
         }
 
         const cryptPassword = await bcrypt.hash(senha, 10)
@@ -26,7 +26,7 @@ const postUser = async (req, res) => {
 
         const { senha: _, ...post } = postedUser.rows[0]
 
-        return res.status(201).json(postedUser.rows[0])
+        return res.status(201).json({ message: `User created with sucess!` })
 
     } catch (error) {
         return res.status(500).json({ message: ` Server internal error: ${error.message}` })
