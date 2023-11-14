@@ -1,7 +1,7 @@
 const express = require('express')
 const { postUser, getUser, updateUserProfile } = require('./controllers/users')
 const { login } = require('./controllers/login')
-const { authenticationFilter } = require('./middlewares/authetication')
+const { authenticationFilter } = require('./middlewares/authentication')
 const { getCategories } = require('./controllers/category')
 const { getTransactions, detailTransaction, postTransaction, updateTransaction, deleteTransaction, getExtract } = require('./controllers/transaction')
 
